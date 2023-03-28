@@ -2,7 +2,7 @@
 .NET
 
 ### Como crear un nuevo proyecto
-		~~~
+		
     mkdir proyectosDotnet
     cd proyectosDotnet
     dotnet new console -o Proyecto
