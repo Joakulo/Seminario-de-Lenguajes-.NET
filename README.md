@@ -1,8 +1,8 @@
 # Seminario-de-Lenguajes-.NET
 .NET
 
-##Como crear un nuevo proyecto
-##Abrir una terminal y escribir:
+### Como crear un nuevo proyecto
+###Abrir una terminal y escribir:
 
 	mkdir proyectosDotnet
     	cd proyectosDotnet
