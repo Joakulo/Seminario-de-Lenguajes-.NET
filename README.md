@@ -2,7 +2,7 @@
 .NET
 
 ### Como crear un nuevo proyecto
-### Abrir una terminal y escribir:
+### En una terminal escribir:
 
     mkdir proyectosDotnet
     cd proyectosDotnet
