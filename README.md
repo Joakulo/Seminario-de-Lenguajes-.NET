@@ -2,11 +2,11 @@
 .NET
 
 ### Como crear un nuevo proyecto
-###Abrir una terminal y escribir:
+### Abrir una terminal y escribir:
 
-	mkdir proyectosDotnet
-    	cd proyectosDotnet
-    	dotnet new console -o Proyecto
-   	cd Proyecto
-    	dotnet run    // Corre el proyecto
-    	code .        // Abre el proyecto en vsc
+    mkdir proyectosDotnet
+    cd proyectosDotnet
+    dotnet new console -o Proyecto
+    cd Proyecto
+    dotnet run    // Corre el proyecto
+    code .        // Abre el proyecto en vsc
