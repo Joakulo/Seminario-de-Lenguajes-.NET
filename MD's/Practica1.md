@@ -251,9 +251,9 @@ Console.WriteLine("entonces a/c = " + a / c);
 
 <summary> ▶️ </summary>
 <br>
+Output:
   
-```c#
-/*Output:
+```
   10/3 = 3
   10.0/3 = 3,3333333333333335
   10/3.0 = 3,3333333333333335
@@ -261,7 +261,6 @@ Console.WriteLine("entonces a/c = " + a / c);
   entonces a/b = 3
   Si c es una variable double, c=3
   entonces a/c = 3,3333333333333335
-*/
 ```
   
 El operador de division ***"/"*** funciona tanto para ***int's*** como para ***double's***. Pero el resultado va a depender de los operandos, si ambos son de tipo ***int***, el resultado será de tipo ***int***. Pero, con que uno solo de esos sea de tipo ***double*** alcanza para que el resultado también sea de tipo ***double***.
@@ -434,15 +433,14 @@ for (int i = 0; i <= 4; i++)
 
 <summary> ▶️ </summary>
 <br>
-  
-```c#
-/*Output:
+
+Output:
+```
 < 1
 uno
 dos
 tres
 > 3
-*/
 ```
   
 </details>   
