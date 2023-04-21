@@ -18,6 +18,8 @@ Console.ReadKey();
   
 </details>
 
+<hr><br>
+
 ```2.``` Investigar por las secuencias de escape \n, \t , \\" y \\\\. Escribir un programa que las utilice para imprimir distintos mensajes en la consola.
 
 ```3.``` El carácter ***@*** delante de un ***string*** desactiva los códigos de escape. Probar el siguiente fragmento de código, eliminar el carácter ***@*** y utilizar las secuencias de escape necesarias para que el programa siga funcionando de igual manera
@@ -39,6 +41,8 @@ Console.WriteLine(st);
   
 </details>
 
+<hr><br>
+
 ```4.``` Escribir un programa que solicite al usuario ingresar su nombre e imprima en la consola un saludo personalizado utilizando ese nombre o la frase “Hola mundo” si el usuario ingresó una línea en blanco. Para ingresar un ***string*** desde el teclado utilizar ***Console.ReadLine()***.
 
 <details>
@@ -54,6 +58,8 @@ if (st.Length != 0){
     Console.WriteLine("Hola Mundo");
 }
 ```
+
+<hr><br>
   
 </details>
 
@@ -129,6 +135,8 @@ switch (st)
 
 </details>
 
+<hr><br>
+
 ```6.``` Utilizar ***Console.ReadLine()*** para leer líneas de texto (secuencia de caracteres que finaliza al presionar ***< ENTER >***) por la consola. Por cada línea leída se debe imprimir la cantidad de caracteres de la misma. El programa termina al ingresar la cadena vacía. (si ***st*** es una variable de tipo ***string***, entonces ***st.Length*** devuelve la cantidad de caracteres del ***string***)
 
 <details>
@@ -147,6 +155,8 @@ while (st.Length != 0){
   
 </details>
 
+<hr><br>
+
 ```7.``` Qué hace la instrucción ***Console.WriteLine("100".Length);*** ?
   
   <details>
@@ -161,6 +171,8 @@ Console.WriteLine("100".Length);
 ```
   
 </details>
+
+<hr><br>
 
 ```8.``` Sea st una variable de tipo string correctamente declarada. ¿Es válida la siguiente instrucción: Console.WriteLine(st=Console.ReadLine());?
   
@@ -185,6 +197,8 @@ Output:
 ```
   
 </details>
+
+<hr><br>
 
 ```9.``` Escribir un programa que lea dos palabras separadas por un blanco que terminan con ***< ENTER >***, y determinar si son simétricas (Ej: 'abbccd' y 'dccbba' son simétricas). ```Tip: si st es un string, entonces st[0] devuelve el primer carácter de st, y st[st.Length-1] devuelve el último carácter de st.```
 
@@ -212,6 +226,8 @@ if (j) {
   
 </details>
 
+<hr><br>
+
 ```10.``` Escribir un programa que imprima en la consola todos los números que sean múltiplos de 17 o de 29 comprendidos entre 1 y 1000
 
 <details>
@@ -228,7 +244,9 @@ for (int i = 17; i < 1000; i++) {
 ```
   
 </details>
-  
+
+<hr><br>
+
 ```11.``` Comprobar el funcionamiento del siguiente fragmento de código, analizar el resultado y contestar las preguntas
   
 ```c#
@@ -269,6 +287,8 @@ Entre un ***string*** y un tipo ***numerico***, el operador ***+*** concatena am
 
 </details>
 
+<hr><br>
+
 ```12.``` Escribir un programa que imprima todos los divisores de un número entero ingresado desde la consola. Para obtener el entero desde un ***string st*** utilizar ***int.Parse(st)***.
   
 <details>
@@ -288,6 +308,8 @@ for (int i = 1; i <= j; i++){
 ```
   
 </details>
+
+<hr><br>
 
 ```13.``` Escribir un programa que calcule la suma de dos números reales introducidos por teclado y muestre el resultado en la consola (utilizar ***double.Parse(st)*** para obtener el valor ***double*** a partir del ***string st***.
 
@@ -310,7 +332,9 @@ Console.WriteLine(c);
 ```
   
 </details>  
-  
+
+<hr><br>
+
 ```14.``` Escribir un programa que multiplique por 365 el número entero ingresado por el usuario desde la consola. El resultado debe imprimirse en la consola dígito por dígito, separado por un espacio comenzando por el dígito menos significativo al más significativo.  
   
 <details>
@@ -329,7 +353,9 @@ for (int i = valor.Length-1; i>=0; i--) {
 ```
   
 </details>    
-  
+
+<hr><br>
+
 ```15.``` Escribir un programa que solicite un año por pantalla y diga si es bisiesto. Un año es bisiesto si es divisible por 4 pero no por 100. Si es divisible por 100, para ser bisiesto debe ser divisible por 400  
   
 <details>
@@ -384,6 +410,8 @@ if (j % 4 == 0){
   
 </details>    
 
+<hr><br>
+
 ```16.``` Si a y b son variables enteras, identificar el problema (y la forma de resolverlo) de la siguiente expresión (tip: observar qué pasa cuando b = 0):
 ```c#
 if ((b != 0) & (a/b > 5)) Console.WriteLine(a/b);
@@ -401,7 +429,9 @@ if ((b != 0) && (a/b > 5)) Console.WriteLine(a/b);
 ```
   
 </details> 
- 
+
+<hr><br>
+
 ```17.``` Utilizar el operador ternario condicional para establecer el contenido de una variable entera con el menor valor de otras dos variables enteras.
 
 <details>
@@ -418,7 +448,9 @@ Console.WriteLine(c);
 ```
   
 </details> 
-  
+
+<hr><br>
+
 ```18.``` ¿Cuál es la salida por consola del siguiente código?
 
 ```c#
@@ -445,6 +477,9 @@ tres
   
 </details>   
 
+<hr><br>
+
+  
 ```19.``` Para cada una de las siguientes líneas de código verificar cuáles son permitidas por el compilador y en tal caso en qué estado quedan las variables involucradas en la declaración al ejecutarse:
 
 ```c#
@@ -484,6 +519,8 @@ char c = 'A', st = "Hola";                  // No compila. "st" se esta declaran
 ```
   
 </details>    
+
+<hr><br>
 
 ```20.``` ¿Cuál es el problema del código siguiente y cómo se soluciona?
 
@@ -555,6 +592,8 @@ for (int i = 1; i <= 10; i++) {
 </table>
   
 </details>                        
+
+<hr><br>
 
 ```21.``` Analizar el siguiente código. ¿Cuál es la salida por consola?  
   
