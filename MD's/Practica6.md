@@ -882,14 +882,13 @@ static class Imprimidor {
 
 <br><hr><br>
 
-```8)``` Crear un programa para gestionar empleados en una empresa. Los empleados deben tener las propiedades públicas de sólo lectura Nombre, DNI, FechaDeIngreso, SalarioBase y Salario. Los valores de estas propiedades (a excepción de Salario que es una propiedad calculada) deben establecerse por medio de un constructor adecuado.
+```8)``` Crear un programa para gestionar empleados en una empresa. Los empleados deben tener las propiedades públicas de sólo lectura ***Nombre***, ***DNI***, ***FechaDeIngreso***, ***SalarioBase*** y ***Salario***. Los valores de estas propiedades (a excepción de ***Salario*** que es una propiedad calculada) deben establecerse por medio de un constructor adecuado.
 
-Existen dos tipos de empleados: Administrativo y Vendedor. No se podrán crear objetos de la clase padre Empleado, pero sí de sus clases hijas (Administrativo y Vendedor). Aparte de las propiedades de solo lectura mencionadas, el administrativo tiene otra propiedad pública de
-lectura/escritura llamada Premio y el vendedor tiene otra propiedad pública de lectura/escritura llamada Comision.
+Existen dos tipos de empleados: ***Administrativo*** y ***Vendedor***. No se podrán crear objetos de la clase padre ***Empleado***, pero sí de sus clases hijas (***Administrativo*** y ***Vendedor***). Aparte de las propiedades de solo lectura mencionadas, el administrativo tiene otra propiedad pública de lectura/escritura llamada ***Premio*** y el vendedor tiene otra propiedad pública de lectura/escritura llamada ***Comision***.
 
-La propiedad de solo lectura Salario, se calcula como el salario base más la comisión o el premio según corresponda.
+La propiedad de solo lectura ***Salario***, se calcula como el salario base más la comisión o el premio según corresponda.
 
-Las clases tendrán además un método público llamado AumentarSalario() que tendrá una implementación distinta en cada clase. En el caso del administrativo se incrementará el salario base en un 1% por cada año de antigüedad que posea en la empresa, en el caso del vendedor se incrementará el salario base en un 5% si su antigüedad es inferior a 10 años o en un 10% en caso contrario.
+Las clases tendrán además un método público llamado ***AumentarSalario()*** que tendrá una implementación distinta en cada clase. En el caso del administrativo se incrementará el salario base en un 1% por cada año de antigüedad que posea en la empresa, en el caso del vendedor se incrementará el salario base en un 5% si su antigüedad es inferior a 10 años o en un 10% en caso contrario.
 
 El siguiente código (ejecutado el día 9/4/2022) debería mostrar en la consola el resultado indicado:
 
@@ -960,6 +959,8 @@ using Teoria6;
     }
 ```
     
+<hr><br>
+    
 Empleado.cs
 
 ```c#
@@ -1001,6 +1002,8 @@ abstract class Empleado{
 }
 ```
   
+<hr><br>    
+    
 Administrativo.cs
     
 ```c#
@@ -1028,6 +1031,8 @@ class Administrativo : Empleado {
     }
 }
 ```
+  
+<hr><br>    
     
 Vendedor.cs
 
@@ -1056,6 +1061,5 @@ class Administrativo : Empleado {
     }
 }
 ```
-    
-    
+
 </details>
