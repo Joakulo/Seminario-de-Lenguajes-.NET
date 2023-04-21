@@ -18,12 +18,9 @@ Console.ReadKey();
   
 </details>
 
-```2.``` Investigar por las secuencias de escape \n, \t , \" y \\. Escribir un programa que las utilice
-para imprimir distintos mensajes en la consola.
+```2.``` Investigar por las secuencias de escape \n, \t , \" y \\. Escribir un programa que las utilice para imprimir distintos mensajes en la consola.
 
-```3.``` El carácter ***@*** delante de un ***string*** desactiva los códigos de escape. Probar el siguiente
-fragmento de código, eliminar el carácter ***@*** y utilizar las secuencias de escape necesarias para
-que el programa siga funcionando de igual manera
+```3.``` El carácter ***@*** delante de un ***string*** desactiva los códigos de escape. Probar el siguiente fragmento de código, eliminar el carácter ***@*** y utilizar las secuencias de escape necesarias para que el programa siga funcionando de igual manera
 
 ```c#
 string st = @"c:\windows\system";
@@ -42,9 +39,7 @@ Console.WriteLine(st);
   
 </details>
 
-```4.``` Escribir un programa que solicite al usuario ingresar su nombre e imprima en la consola un
-saludo personalizado utilizando ese nombre o la frase “Hola mundo” si el usuario ingresó una
-línea en blanco. Para ingresar un ***string*** desde el teclado utilizar ***Console.ReadLine()***.
+```4.``` Escribir un programa que solicite al usuario ingresar su nombre e imprima en la consola un saludo personalizado utilizando ese nombre o la frase “Hola mundo” si el usuario ingresó una línea en blanco. Para ingresar un ***string*** desde el teclado utilizar ***Console.ReadLine()***.
 
 <details>
 
@@ -62,28 +57,338 @@ if (st.Length != 0){
   
 </details>
 
-```5.``` Idem. al ejercicio anterior salvo que se imprimirá un mensaje de saludo diferente según sea el
-nombre ingresado por el usuario. Así para “Juan” debe imprimir “¡Hola amigo!”, para “María”
-debe imprimir “Buen día señora”, para “Alberto” debe imprimir “Hola Alberto”. En otro caso,
-debe imprimir “Buen día ” seguido del nombre ingresado o “¡Buen día mundo!” si se ha
-ingresado una línea vacía.
+```5.``` Idem. al ejercicio anterior salvo que se imprimirá un mensaje de saludo diferente según sea el nombre ingresado por el usuario. Así para “Juan” debe imprimir “¡Hola amigo!”, para “María” debe imprimir “Buen día señora”, para “Alberto” debe imprimir “Hola Alberto”. En otro caso, debe imprimir “Buen día ” seguido del nombre ingresado o “¡Buen día mundo!” si se ha ingresado una línea vacía.
 
-- ```a)``` utilizando if ... else if
+- ```a)``` utilizando ***if ... else if***
   
-- ```b)``` utilizando switch
+- ```b)``` utilizando ***switch***
 
+<details>
 
+<summary> ▶️ </summary>
+<br>
 
+<table align="center">
+<tr>
+<td> if ... else if </td> <td> switch </td>
+</tr>
+<tr>
+<td>
 
+ ```c#
+Console.WriteLine("Ingrese su nombre");
+string st = Console.ReadLine();
 
+if (st == "Juan"){
+    Console.WriteLine("Hola amigo");
+} else if (st == "Maria"){
+    Console.WriteLine("Buen día señora");
+} else if (st == "Alberto"){
+    Console.WriteLine("Hola Alberto");
+} else if (st.Length == 0){
+    Console.WriteLine("Buen día mundo");
+} else {
+    Console.WriteLine("Buen dia " + st);
+}
+```
+</td>
+<td>
 
+```c#
+Console.WriteLine("Ingrese su nombre");
+string st = Console.ReadLine();
 
+switch (st)
+{
+    case "Juan":
+        Console.WriteLine("Hola amigo");
+        break;
+    
+    case "Maria":
+        Console.WriteLine("Buen día señora");
+        break;
+    
+    case "Alberto":
+        Console.WriteLine("Hola Alberto");
+        break;
 
+    case "":
+        Console.WriteLine("Buen día mundo");
+        break;
 
+    default:
+        Console.WriteLine("Buen dia " + st);
+        break;
 
+}
+```
+ 
+</td>
+</tr>
+</table>
 
+</details>
 
+```6.``` Utilizar ***Console.ReadLine()*** para leer líneas de texto (secuencia de caracteres que finaliza al presionar ***< ENTER >***) por la consola. Por cada línea leída se debe imprimir la cantidad de caracteres de la misma. El programa termina al ingresar la cadena vacía. (si ***st*** es una variable de tipo ***string***, entonces ***st.Length*** devuelve la cantidad de caracteres del ***string***)
 
+<details>
 
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+string st = Console.ReadLine();
 
+while (st.Length != 0){
+    Console.WriteLine(st.Length);
+    st = Console.ReadLine();
+}
+```
+  
+</details>
 
+```7.``` Qué hace la instrucción ***Console.WriteLine("100".Length);*** ?
+  
+  <details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+Console.WriteLine("100".Length);
+
+    // Output: 3
+```
+  
+</details>
+
+```8.``` Sea st una variable de tipo string correctamente declarada. ¿Es válida la siguiente instrucción: Console.WriteLine(st=Console.ReadLine());?
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+
+Sí lo es, funciona correctamente.
+```c#
+string st;
+Console.WriteLine(st=Console.ReadLine());
+
+/*
+Input: 
+  Hola Mundo!
+
+Output:
+  Hola Mundo!
+  Hola Mundo!
+*/
+```
+  
+</details>
+
+```9.``` Escribir un programa que lea dos palabras separadas por un blanco que terminan con ***< ENTER >***, y determinar si son simétricas (Ej: 'abbccd' y 'dccbba' son simétricas). ```Tip: si st es un string, entonces st[0] devuelve el primer carácter de st, y st[st.Length-1] devuelve el último carácter de st.```
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+string st = Console.ReadLine();
+bool j = true;
+
+for (int i = 0; i < (st.Length / 2.0) ; i++) {
+    if (st[i] != st[st.Length - (i+1)]) {
+        j = false;
+    }
+}
+
+if (j) {
+    Console.WriteLine("Son iguales");
+} else {
+    Console.WriteLine("Son dinstintas");
+}
+```
+  
+</details>
+
+```10.``` Escribir un programa que imprima en la consola todos los números que sean múltiplos de 17 o de 29 comprendidos entre 1 y 1000
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+for (int i = 17; i < 1000; i++) {
+    if ((i % 17 == 0) | (i % 29 == 0)) {
+        Console.WriteLine(i);
+    }
+}
+```
+  
+</details>
+  
+```11.``` Comprobar el funcionamiento del siguiente fragmento de código, analizar el resultado y contestar las preguntas
+  
+```c#
+Console.WriteLine("10/3 = " + 10 / 3);
+Console.WriteLine("10.0/3 = " + 10.0 / 3);
+Console.WriteLine("10/3.0 = " + 10 / 3.0);
+int a = 10, b = 3;
+Console.WriteLine("Si a y b son variables enteras, si a=10 y b=3");
+Console.WriteLine("entonces a/b = " + a / b);
+double c = 3;
+Console.WriteLine("Si c es una variable double, c=3");
+Console.WriteLine("entonces a/c = " + a / c);
+```
+
+¿Qué se puede concluir respecto del operador de división ***“/”*** ?
+  
+¿Cómo funciona el operador ***+*** entre un ***string*** y un dato numérico?  
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+/*Output:
+  10/3 = 3
+  10.0/3 = 3,3333333333333335
+  10/3.0 = 3,3333333333333335
+  Si a y b son variables enteras, si a=10 y b=3
+  entonces a/b = 3
+  Si c es una variable double, c=3
+  entonces a/c = 3,3333333333333335
+*/
+```
+  
+El operador de division ***"/"*** funciona tanto para ***int's*** como para ***double's***. Pero el resultado va a depender de los operandos, si ambos son de tipo ***int***, el resultado será de tipo ***int***. Pero, con que uno solo de esos sea de tipo ***double*** alcanza para que el resultado también sea de tipo ***double***.
+ 
+Entre un ***string*** y un tipo ***numerico***, el operador ***+*** concatena ambos datos para guardarlos en un nuevo ***string***. 
+
+</details>
+
+```12.``` Escribir un programa que imprima todos los divisores de un número entero ingresado desde la consola. Para obtener el entero desde un ***string st*** utilizar ***int.Parse(st)***.
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+string st = Console.ReadLine();
+int j = int.Parse(st);
+ 
+for (int i = 1; i <= j; i++){
+    if (j % i == 0){
+        Console.WriteLine(i);
+    }
+}
+```
+  
+</details>
+
+```13.``` Escribir un programa que calcule la suma de dos números reales introducidos por teclado y muestre el resultado en la consola (utilizar ***double.Parse(st)*** para obtener el valor ***double*** a partir del ***string st***.
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+Console.Write("Ingrese un numero: ");
+string st = Console.ReadLine();
+double a = double.Parse(st);
+
+Console.Write("Ingrese otro numero: ");
+st = Console.ReadLine();
+double b = double.Parse(st);
+
+double c = a + b;
+Console.WriteLine(c);
+```
+  
+</details>  
+  
+```14.``` Escribir un programa que multiplique por 365 el número entero ingresado por el usuario desde la consola. El resultado debe imprimirse en la consola dígito por dígito, separado por un espacio comenzando por el dígito menos significativo al más significativo.  
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+Console.Write("Ingrese un numero: ");
+int a = 365 * int.Parse(Console.ReadLine());
+string valor = a.ToString();
+
+for (int i = valor.Length-1; i>=0; i--) {
+    Console.Write(valor[i] + " ");
+}
+```
+  
+</details>    
+  
+```15.``` Escribir un programa que solicite un año por pantalla y diga si es bisiesto. Un año es bisiesto si es divisible por 4 pero no por 100. Si es divisible por 100, para ser bisiesto debe ser divisible por 400  
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+<table align="center">
+<tr>
+<td> Solucion 1 </td> <td> Solucion 2 </td>
+</tr>
+<tr>
+<td>
+
+```c#
+string st = Console.ReadLine();
+int j=int.Parse(st);
+ 
+if (j % 4 != 0){
+    Console.WriteLine("No bisiesto");
+} else if (j % 100 != 0){
+    Console.WriteLine("Bisiesto");
+} else if (j % 400 == 0){
+    Console.WriteLine("Bisiesto");
+} else {
+    Console.WriteLine("No bisiesto");
+}
+```
+</td>
+<td>
+
+```c#
+string st = Console.ReadLine();
+int j=int.Parse(st);
+ 
+if (j % 4 == 0){
+    if (j % 100 != 0){
+        Console.WriteLine("Bisiesto");
+    } else if (j % 400 == 0){
+        Console.WriteLine("Bisiesto");
+    } else{
+        Console.WriteLine("No Bisiesto");
+    }
+} else {
+    Console.WriteLine("No Bisiesto");
+}
+```
+ 
+</td>
+</tr>
+</table>
+  
+</details>    
+
+```16.``` Si a y b son variables enteras, identificar el problema (y la forma de resolverlo) de la siguiente expresión (tip: observar qué pasa cuando b = 0):
+```c#
+if ((b != 0) & (a/b > 5)) Console.WriteLine(a/b);
+```
+  
+  
+  
