@@ -389,6 +389,216 @@ if (j % 4 == 0){
 ```c#
 if ((b != 0) & (a/b > 5)) Console.WriteLine(a/b);
 ```
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+
+El ***if*** tiene dos ***statements*** que estan separados por un ***&*** simple, ¿cual es el problema? Que al momento de llegar al ***if***, se pregunta por ambos parentesis. Por lo tanto, si se ingresa el 0, el primer statement va a dar ***false***, pero cuando llegue al segundo va a preguntar por a/0, y esto tira una excepcion (***DivideByZeroException***). La solucion es tan simple como agregar un segundo ***&*** para que sea un ***and*** estricto, o sea, si el primero da ***false***, no pregunta por el segundo.  
+
+```c#
+if ((b != 0) && (a/b > 5)) Console.WriteLine(a/b);
+```
+  
+</details> 
+ 
+```17.``` Utilizar el operador ternario condicional para establecer el contenido de una variable entera con el menor valor de otras dos variables enteras.
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+int a = int.Parse(Console.ReadLine());
+int b = int.Parse(Console.ReadLine());
+ 
+int c = (a < b) ? a : b;
+Console.WriteLine(c);
+```
+  
+</details> 
+  
+```18.``` ¿Cuál es la salida por consola del siguiente código?
+
+```c#
+for (int i = 0; i <= 4; i++)
+{
+  string st = i < 3 ? i == 2 ? "dos" : i == 1 ? "uno" : "< 1" : i < 4 ? "tres" : "> 3";
+  Console.WriteLine(st);
+} 
+```
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+/*Output:
+< 1
+uno
+dos
+tres
+> 3
+*/
+```
+  
+</details>   
+
+```19.``` Para cada una de las siguientes líneas de código verificar cuáles son permitidas por el compilador y en tal caso en qué estado quedan las variables involucradas en la declaración al ejecutarse:
+
+```c#
+int a, b, c;
+int a; int b; int c, d;
+int a = 1; int b = 2; int c = 3;
+int b; int c; int a = b = c = 1;
+int c; int a, b = c = 1;
+int c; int a = 2, b = c = 1;
+int a = 2, b, c, d = 2 * a;
+int a = 2, int b = 3, int c = 4;
+int a = 2; b = 3; c = 4;
+int a; int c = a;
+char c = 'A', string st = "Hola";
+char c = 'A'; string st = "Hola";
+char c = 'A', st = "Hola";
+```
+
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+int a; int b; int c, d;                     // a, b, c, d quedan vacias
+int a = 1; int b = 2; int c = 3;            // a = 1, b = 2, c = 3
+int b; int c; int a = b = c = 1;            // a = 1, b = 1, c = 1
+int c; int a, b = c = 1;                    // a vacia, b = 1, c = 1
+int c; int a = 2, b = c = 1;                // a = 2, b = 1, c = 1
+int a = 2, b, c, d = 2 * a;                 // a = 2, b = 4, c = 4, d = 4
+int a = 2, int b = 3, int c = 4;            // No compila. Se debe reemplazar las "," por ";".
+int a = 2; b = 3; c = 4;                    // Individualmente no compila. Antes de asignar valores se debe declarar su tipo.
+int a; int c = a;                           // No compila. Se le intenta asignar el valor de "a" a "c", pero "a" no esta inicializada.
+char c = 'A', string st = "Hola";           // No compila. Se debe reemplazar la "," por ";".
+char c = 'A'; string st = "Hola";           // c = 'A', st = "Hola"
+char c = 'A', st = "Hola";                  // No compila. "st" se esta declarando como "char" y se le quiere asignar un "string".
+```
+  
+</details>    
+
+```20.``` ¿Cuál es el problema del código siguiente y cómo se soluciona?
+
+```c#
+int i = 0;
+for (int i = 1; i <= 10;)
+{
+  Console.WriteLine(i++);
+}
+```
+                        
+<details>
+
+<summary> ▶️ </summary>
+<br>
+
+El problema es que la variable ***i***, se esta declarando dos veces. Depende que queramos que haga nuestro programa hay distintas soluciones.  
+  
+<table align="center">
+<tr>
+<td> Eliminar la primer declaracion </td> <td> Agregar una segunda variable </td>
+</tr>
+<tr>
+<td>
+
+```c#
+for (int i = 1; i <= 10;) {
+    Console.WriteLine(i++);
+}
+                        
+/*Output:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+*/                        
+```
+</td>
+<td>
+
+```c#
+int j = 0;
+for (int i = 1; i <= 10; i++) {
+    Console.WriteLine(j++);
+}
+                       
+/*Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+*/                       
+```
+ 
+</td>
+</tr>
+</table>
+  
+</details>                        
+
+```21.``` Analizar el siguiente código. ¿Cuál es la salida por consola?  
+  
+```c# 
+int i = 1;
+if (--i == 0)
+{
+  Console.WriteLine("cero");
+}
+if (i++ == 0)
+{
+  Console.WriteLine("cero");
+}
+Console.WriteLine(i)
+```
+  
+<details>
+
+<summary> ▶️ </summary>
+<br>
+  
+```c#
+int i = 1;
+if (--i == 0)         //Resta, despues compara
+{
+  Console.WriteLine("cero");
+}
+if (i++ == 0)         //Compara, despues suma
+{
+  Console.WriteLine("cero");
+}
+Console.WriteLine(i)
+
+/*Output:
+cero
+cero
+1
+*/
+```
+  
+</details>
+  
   
   
   
