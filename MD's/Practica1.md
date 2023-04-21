@@ -18,7 +18,7 @@ Console.ReadKey();
   
 </details>
 
-```2.``` Investigar por las secuencias de escape \n, \t , \" y \\. Escribir un programa que las utilice para imprimir distintos mensajes en la consola.
+```2.``` Investigar por las secuencias de escape \n, \t , \\" y \\\\. Escribir un programa que las utilice para imprimir distintos mensajes en la consola.
 
 ```3.``` El carácter ***@*** delante de un ***string*** desactiva los códigos de escape. Probar el siguiente fragmento de código, eliminar el carácter ***@*** y utilizar las secuencias de escape necesarias para que el programa siga funcionando de igual manera
 
