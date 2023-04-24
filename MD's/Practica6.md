@@ -1,5 +1,14 @@
 <h1 align="center">Practica 6</h1>
 
+<div align = "center"  id="Ejercicio_1"> 
+  
+<h2> Indice: </h2>
+
+| [1](#Ejercicio_1) | [2](#Ejercicio_2) | [3](#Ejercicio_3) | [4](#Ejercicio_4) | [5](#Ejercicio_5) | [6](#Ejercicio_6) | [7](#Ejercicio_7) | [8](#Ejercicio_8) |
+===
+
+</div>
+
 ```1)``` Sin borrar ni modificar ninguna línea, completar la definición de las clases B, C y D
 
 ```c#
@@ -93,7 +102,7 @@ class D : C {
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_2"><br>
 
 ```2)``` Aunque consultar en el código por el tipo de un objeto indica habitualmente un diseño ineficiente, por motivos didácticos vamos a utilizarlo. Completar el siguiente código, que utiliza las clases definidas en el ejercicio anterior, para que se produzca la salida indicada:
 
@@ -157,7 +166,7 @@ foreach (A a in vector) {
 
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_3"><br>
 
 ```3)``` ¿Por qué no funciona el siguiente código? ¿Cómo se puede solucionar fácilmente?
 
@@ -185,7 +194,7 @@ Al no especificar el modificador de acceso de la variable "velocidad", el compil
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_4"><br>
 
 ```4)``` Contestar sobre el siguiente programa:
 
@@ -232,7 +241,7 @@ class Taxi : Auto {
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_5"><br>
 
 ```5)``` ¿Qué líneas del siguiente código provocan error de compilación y por qué?
 
@@ -269,7 +278,7 @@ protected Persona SegundoDueño {
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_6"><br>
 
 ```6)``` Señalar el error en cada uno de los siguientes casos:
 
@@ -798,7 +807,7 @@ un override desde B. */
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_7"><br>
 
 ```7)``` Ofrecer una implementación polimórfica para mejorar el siguiente programa:
 
@@ -880,7 +889,7 @@ static class Imprimidor {
   
 </details>
 
-<br><hr><br>
+<br><hr id="Ejercicio_8"><br>
 
 ```8)``` Crear un programa para gestionar empleados en una empresa. Los empleados deben tener las propiedades públicas de sólo lectura ***Nombre***, ***DNI***, ***FechaDeIngreso***, ***SalarioBase*** y ***Salario***. Los valores de estas propiedades (a excepción de ***Salario*** que es una propiedad calculada) deben establecerse por medio de un constructor adecuado.
 
