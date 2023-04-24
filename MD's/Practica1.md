@@ -1,5 +1,14 @@
 <h1 align="center">Practica 1</h1>
 
+<div align = "center"  id="Ejercicio_1"> 
+  
+<h2> Indice: </h2>
+
+| [1](#Ejercicio_1) | [2](#Ejercicio_2) | [3](#Ejercicio_3) | [4](#Ejercicio_4) | [5](#Ejercicio_5) | [6](#Ejercicio_6) | [7](#Ejercicio_7) | [8](#Ejercicio_8) | [9](#Ejercicio_9) | [10](#Ejercicio_10) | [11](#Ejercicio_11) | [12](#Ejercicio_12) | [13](#Ejercicio_13) | [14](#Ejercicio_14) | [15](#Ejercicio_15) | [16](#Ejercicio_16) | [17](#Ejercicio_17) | [18](#Ejercicio_18) | [19](#Ejercicio_19) | [17](#Ejercicio_20) | [18](#Ejercicio_21) |
+===
+
+</div>
+
 ``1.`` Consultar en la documentación de Microsoft y responder cuál es la diferencia entre los métodos ***WriteLine()*** y ***Write()*** de la clase ***System.Console*** ¿Cómo funciona el método ***ReadKey()*** de la misma clase? Escribir un programa que imprima en la consola la frase “Hola Mundo” haciendo una pausa entre palabra y palabra esperando a que el usuario presione una tecla para continuar. ``Tip: usar los métodos ReadKey() y Write() de la clase System.Console.``
 
 <details>
@@ -18,7 +27,7 @@ Console.ReadKey();
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_2"><br  id="Ejercicio_3">
 
 ```2.``` Investigar por las secuencias de escape \n, \t , \\" y \\\\. Escribir un programa que las utilice para imprimir distintos mensajes en la consola.
 
@@ -41,7 +50,7 @@ Console.WriteLine(st);
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_4"><br>
 
 ```4.``` Escribir un programa que solicite al usuario ingresar su nombre e imprima en la consola un saludo personalizado utilizando ese nombre o la frase “Hola mundo” si el usuario ingresó una línea en blanco. Para ingresar un ***string*** desde el teclado utilizar ***Console.ReadLine()***.
 
@@ -59,10 +68,10 @@ if (st.Length != 0){
 }
 ```
 
-<hr><br>
-  
 </details>
-
+  
+<hr id="Ejercicio_5"><br>
+  
 ```5.``` Idem. al ejercicio anterior salvo que se imprimirá un mensaje de saludo diferente según sea el nombre ingresado por el usuario. Así para “Juan” debe imprimir “¡Hola amigo!”, para “María” debe imprimir “Buen día señora”, para “Alberto” debe imprimir “Hola Alberto”. En otro caso, debe imprimir “Buen día ” seguido del nombre ingresado o “¡Buen día mundo!” si se ha ingresado una línea vacía.
 
 - ```a)``` utilizando ***if ... else if***
@@ -135,7 +144,7 @@ switch (st)
 
 </details>
 
-<hr><br>
+<hr id="Ejercicio_6"><br>
 
 ```6.``` Utilizar ***Console.ReadLine()*** para leer líneas de texto (secuencia de caracteres que finaliza al presionar ***< ENTER >***) por la consola. Por cada línea leída se debe imprimir la cantidad de caracteres de la misma. El programa termina al ingresar la cadena vacía. (si ***st*** es una variable de tipo ***string***, entonces ***st.Length*** devuelve la cantidad de caracteres del ***string***)
 
@@ -155,7 +164,7 @@ while (st.Length != 0){
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_7"><br>
 
 ```7.``` Qué hace la instrucción ***Console.WriteLine("100".Length);*** ?
   
@@ -172,7 +181,7 @@ Console.WriteLine("100".Length);
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_8"><br>
 
 ```8.``` Sea st una variable de tipo string correctamente declarada. ¿Es válida la siguiente instrucción: Console.WriteLine(st=Console.ReadLine());?
   
@@ -198,7 +207,7 @@ Output:
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_9"><br>
 
 ```9.``` Escribir un programa que lea dos palabras separadas por un blanco que terminan con ***< ENTER >***, y determinar si son simétricas (Ej: 'abbccd' y 'dccbba' son simétricas). ```Tip: si st es un string, entonces st[0] devuelve el primer carácter de st, y st[st.Length-1] devuelve el último carácter de st.```
 
@@ -226,7 +235,7 @@ if (j) {
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_10"><br>
 
 ```10.``` Escribir un programa que imprima en la consola todos los números que sean múltiplos de 17 o de 29 comprendidos entre 1 y 1000
 
@@ -245,7 +254,7 @@ for (int i = 17; i < 1000; i++) {
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_11"><br>
 
 ```11.``` Comprobar el funcionamiento del siguiente fragmento de código, analizar el resultado y contestar las preguntas
   
@@ -287,7 +296,7 @@ Entre un ***string*** y un tipo ***numerico***, el operador ***+*** concatena am
 
 </details>
 
-<hr><br>
+<hr id="Ejercicio_12"><br>
 
 ```12.``` Escribir un programa que imprima todos los divisores de un número entero ingresado desde la consola. Para obtener el entero desde un ***string st*** utilizar ***int.Parse(st)***.
   
@@ -309,7 +318,7 @@ for (int i = 1; i <= j; i++){
   
 </details>
 
-<hr><br>
+<hr id="Ejercicio_13"><br>
 
 ```13.``` Escribir un programa que calcule la suma de dos números reales introducidos por teclado y muestre el resultado en la consola (utilizar ***double.Parse(st)*** para obtener el valor ***double*** a partir del ***string st***.
 
@@ -333,7 +342,7 @@ Console.WriteLine(c);
   
 </details>  
 
-<hr><br>
+<hr id="Ejercicio_14"><br>
 
 ```14.``` Escribir un programa que multiplique por 365 el número entero ingresado por el usuario desde la consola. El resultado debe imprimirse en la consola dígito por dígito, separado por un espacio comenzando por el dígito menos significativo al más significativo.  
   
@@ -354,7 +363,7 @@ for (int i = valor.Length-1; i>=0; i--) {
   
 </details>    
 
-<hr><br>
+<hr id="Ejercicio_15"><br>
 
 ```15.``` Escribir un programa que solicite un año por pantalla y diga si es bisiesto. Un año es bisiesto si es divisible por 4 pero no por 100. Si es divisible por 100, para ser bisiesto debe ser divisible por 400  
   
@@ -410,7 +419,7 @@ if (j % 4 == 0){
   
 </details>    
 
-<hr><br>
+<hr id="Ejercicio_16"><br>
 
 ```16.``` Si a y b son variables enteras, identificar el problema (y la forma de resolverlo) de la siguiente expresión (tip: observar qué pasa cuando b = 0):
 ```c#
@@ -430,7 +439,7 @@ if ((b != 0) && (a/b > 5)) Console.WriteLine(a/b);
   
 </details> 
 
-<hr><br>
+<hr id="Ejercicio_17"><br>
 
 ```17.``` Utilizar el operador ternario condicional para establecer el contenido de una variable entera con el menor valor de otras dos variables enteras.
 
@@ -449,7 +458,7 @@ Console.WriteLine(c);
   
 </details> 
 
-<hr><br>
+<hr id="Ejercicio_18"><br>
 
 ```18.``` ¿Cuál es la salida por consola del siguiente código?
 
@@ -477,7 +486,7 @@ tres
   
 </details>   
 
-<hr><br>
+<hr id="Ejercicio_19"><br>
 
   
 ```19.``` Para cada una de las siguientes líneas de código verificar cuáles son permitidas por el compilador y en tal caso en qué estado quedan las variables involucradas en la declaración al ejecutarse:
@@ -520,7 +529,7 @@ char c = 'A', st = "Hola";                  // No compila. "st" se esta declaran
   
 </details>    
 
-<hr><br>
+<hr id="Ejercicio_20"><br>
 
 ```20.``` ¿Cuál es el problema del código siguiente y cómo se soluciona?
 
@@ -593,7 +602,7 @@ for (int i = 1; i <= 10; i++) {
   
 </details>                        
 
-<hr><br>
+<hr id="Ejercicio_21"><br>
 
 ```21.``` Analizar el siguiente código. ¿Cuál es la salida por consola?  
   
