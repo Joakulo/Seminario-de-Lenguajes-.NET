@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion", "Aplicacion\Aplicacion.csproj", "{455656BE-0E35-4BBA-A9A1-F0D28274F635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automotores", "Automotores\Automotores.csproj", "{BD7A8AB5-96AB-4CDD-9086-E1C35BA14158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figuras", "Figuras\Figuras.csproj", "{A639299C-F7D6-42FA-B8E6-3990270FDE28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{455656BE-0E35-4BBA-A9A1-F0D28274F635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455656BE-0E35-4BBA-A9A1-F0D28274F635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455656BE-0E35-4BBA-A9A1-F0D28274F635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455656BE-0E35-4BBA-A9A1-F0D28274F635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7A8AB5-96AB-4CDD-9086-E1C35BA14158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7A8AB5-96AB-4CDD-9086-E1C35BA14158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7A8AB5-96AB-4CDD-9086-E1C35BA14158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7A8AB5-96AB-4CDD-9086-E1C35BA14158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A639299C-F7D6-42FA-B8E6-3990270FDE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A639299C-F7D6-42FA-B8E6-3990270FDE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A639299C-F7D6-42FA-B8E6-3990270FDE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A639299C-F7D6-42FA-B8E6-3990270FDE28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

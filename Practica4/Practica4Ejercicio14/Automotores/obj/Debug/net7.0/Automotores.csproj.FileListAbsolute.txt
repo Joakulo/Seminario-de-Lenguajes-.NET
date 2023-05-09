@@ -1,0 +1,12 @@
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\bin\Debug\net7.0\Automotores.deps.json
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\bin\Debug\net7.0\Automotores.dll
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\bin\Debug\net7.0\Automotores.pdb
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.csproj.AssemblyReference.cache
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.AssemblyInfoInputs.cache
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.AssemblyInfo.cs
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.csproj.CoreCompileInputs.cache
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.dll
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\refint\Automotores.dll
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\Automotores.pdb
+C:\Users\Joaco\proyectosDotnet\Practica4Ejercicio14\Automotores\obj\Debug\net7.0\ref\Automotores.dll
