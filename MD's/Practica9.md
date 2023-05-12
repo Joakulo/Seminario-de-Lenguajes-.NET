@@ -31,6 +31,10 @@ hola 7 A
 <br>
   
 ```c#
+T1 Get<T1>(List<object> L, int i){
+    var a = L.ToArray();
+    return (T1)a[i];
+}
 ```
   
 </details>
@@ -67,6 +71,16 @@ Debe evitarse que durante la ejecución del método ```Imprimir``` se produzca b
 <br>
   
 ```c#
+void Set<T1>(T1[] v, T1 dato, int i){
+    v[i] = dato;
+}
+
+void Imprimir<T>(T[] v){
+    foreach (T e in v) {
+        Console.Write(e + " ");
+    }
+    Console.WriteLine();
+}
 ```
   
 </details>
@@ -107,6 +121,13 @@ Nota: el método ```GetNuevoObjetoDelMismoTipo``` sólo funciona con parámetros
 <br>
   
 ```c#
+T1[] CrearArreglo<T1>(params T1[] a){
+    return a;
+}
+
+T GetNuevoObjetoDelMismoTipo<T>(T dato) where T : new(){
+    return new T();
+}
 ```
   
 </details>
@@ -118,9 +139,9 @@ Nota: el método ```GetNuevoObjetoDelMismoTipo``` sólo funciona con parámetros
 ```c#
 class Nodo<T>
 {
-  public T Valor { get; private set; }
-  public Nodo<T>? Proximo { get; set; } = null;
-  public Nodo(T valor) => Valor = valor;
+    public T Valor { get; private set; }
+    public Nodo<T>? Proximo { get; set; } = null;
+    public Nodo(T valor) => Valor = valor;
 }
 ```
 
@@ -137,8 +158,8 @@ lista.AgregarAdelante(0);
 IEnumerator<int> enumerador = lista.GetEnumerator();
 while (enumerador.MoveNext())
 {
-  int i = enumerador.Current;
-  Console.Write(i + " ");
+    int i = enumerador.Current;
+    Console.Write(i + " ");
 }
 Console.WriteLine();
 ```
@@ -151,13 +172,51 @@ Salida por consola
 
 <details>
 
-<summary> ▶️ </summary>
+<summary> ▶️ ListaEnlazada.cs </summary>
 <br>
   
 ```c#
+class ListaEnlazada<T> {
+
+    private Nodo<T>? _inicio = null;
+	private Nodo<T>? _fin;
+
+    public void AgregarAdelante(T dato) {
+		var aux = new Nodo<T>(dato);
+
+		if (this._inicio == null) {
+			this._inicio = aux;
+			this._fin = aux;
+		} else {
+			aux.Proximo = this._inicio;
+			this._inicio = aux;
+		}
+	}
+
+    public void AgregarAtras(T elem) {
+		var aux = new Nodo<T>(elem);
+
+		if (this._inicio == null) {
+			this._inicio = aux;
+			this._fin = aux;
+		} else {
+			_fin.Proximo = aux;
+			_fin = aux;
+		}
+	}
+
+    public IEnumerator<T> GetEnumerator(){
+        Nodo<T> aux = _inicio;
+        List<T> lista = new List<T>();
+        while(aux.Proximo!=null){
+            lista.Add(aux.Valor);
+            aux = aux.Proximo;
+        }
+        lista.Add(aux.Valor);
+        return lista.GetEnumerator();
+    }
+}
 ```
-  
-</details>
 
 <br><hr id="Ejercicio_5"><br>
 
@@ -187,7 +246,7 @@ n.Insertar(5);
 n.Insertar(12);
 foreach (int elem in n.InOrder)
 {
-  Console.Write(elem + " ");
+    Console.Write(elem + " ");
 }
 Console.WriteLine();
 Console.WriteLine($"Altura: {n.Altura}");
@@ -201,7 +260,7 @@ n2.Insertar("XYZ");
 n2.Insertar("ABC");
 foreach (string elem in n2.InOrder)
 {
-  Console.Write(elem + " ");
+    Console.Write(elem + " ");
 }
 Console.WriteLine();
 Console.WriteLine($"Altura: {n2.Altura}");
@@ -227,10 +286,105 @@ Máximo: XYZ
 
 <details>
 
-<summary> ▶️ </summary>
+<summary> ▶️ Nodo.cs </summary>
 <br>
   
 ```c#
+class Nodo<T> where T : IComparable<T> {
+    public T _dato {get; set;}
+    public Nodo<T>? _hijoIzquierdo {get; set;}
+    public Nodo<T>? _hijoDerecho {get; set;}
+
+    public Nodo(T dato) {
+        _dato = dato;
+        _hijoIzquierdo = null;
+        _hijoDerecho = null;
+    }
+
+    public void Insertar(T dato) {
+        if (dato.CompareTo(_dato) < 0) {
+            if (_hijoIzquierdo != null) {
+                _hijoIzquierdo.Insertar(dato);
+            } else {
+                _hijoIzquierdo = new(dato);
+            }
+        }
+        if (dato.CompareTo(_dato) > 0) {
+            if (_hijoDerecho != null) {
+                _hijoDerecho.Insertar(dato);
+            } else {
+                _hijoDerecho = new(dato);
+            }
+        }
+    }
+
+    public List<T> InOrder {
+        get {
+            var aux = new List<T>();
+            GetInOrder(aux);
+            return aux;
+        }
+    }
+
+    private void GetInOrder(List<T> aux) {
+        if (_hijoIzquierdo != null) {
+                _hijoIzquierdo.GetInOrder(aux);
+        }
+        aux.Add(_dato);
+        if (_hijoDerecho != null) {
+                _hijoDerecho.GetInOrder(aux);
+        }
+    }
+
+    public int Altura {
+        get {
+            int i = -1, izq = 0, der = 0;
+            if ((_hijoIzquierdo == null) && (_hijoDerecho == null)) { 
+                return 0;
+            } else {
+                if (_hijoIzquierdo != null) {
+                    izq = _hijoIzquierdo.Altura;
+                }
+                if (_hijoDerecho != null) {
+                    der = _hijoDerecho.Altura;
+                }
+                i = Math.Max(izq, der);
+            }
+            return i + 1;
+        }
+	}
+
+    public int CantNodos {
+        get { 
+            int aux = 1;
+            if (_hijoIzquierdo != null) {
+                    aux += _hijoIzquierdo.CantNodos;
+            }
+            if (_hijoDerecho != null) {
+                    aux += _hijoDerecho.CantNodos;
+            }
+            return aux;
+        }
+    }
+
+    public T ValorMaximo {
+        get {
+            if (_hijoDerecho != null) {
+                    return _hijoDerecho.ValorMaximo;
+            }
+            return _dato;
+        }
+    }
+
+    public T ValorMinimo {
+        get {
+            if (_hijoIzquierdo != null) {
+                    return _hijoIzquierdo.ValorMinimo;
+            }
+            return _dato;
+        }
+    }
+}
 ```
   
 </details>
@@ -242,14 +396,14 @@ Máximo: XYZ
 ```c#
 class Program
 {
-  static void Main(string[] args)
-  {
-    Nodo<int> nodo1 = new Nodo<int>(5);
-    Agregar(nodo1, 1, 10, 3, 4, 56, 22, 31, 0, 15, 14);
-    Imprimir(nodo1);
-    Nodo<string> nodo2 = new Nodo<string>("hola");
-    Agregar(nodo2, "Mundo", "XYZ", "ABC", "nada");
-    Imprimir(nodo2);
+    static void Main(string[] args)
+    {
+        Nodo<int> nodo1 = new Nodo<int>(5);
+        Agregar(nodo1, 1, 10, 3, 4, 56, 22, 31, 0, 15, 14);
+        Imprimir(nodo1);
+        Nodo<string> nodo2 = new Nodo<string>("hola");
+        Agregar(nodo2, "Mundo", "XYZ", "ABC", "nada");
+        Imprimir(nodo2);
   }
 . . .
 ```
@@ -367,23 +521,23 @@ de conjunto como la unión, la intersección, ...
 
 ```
 Palabra: "8"
-  |--Posiciones en Texto1:--> 0
-  |--Posiciones en Texto2:--> 295
+    |--Posiciones en Texto1:--> 0
+    |--Posiciones en Texto2:--> 295
 Palabra: "al"
-  |--Posiciones en Texto1:--> 13 158 313 388
-  |--Posiciones en Texto2:--> 13 160 346
+    |--Posiciones en Texto1:--> 13 158 313 388
+    |--Posiciones en Texto2:--> 13 160 346
 Palabra: "archivo"
-  |--Posiciones en Texto1:--> 52 91 185 269 345
-  |--Posiciones en Texto2:--> 65 195 240 311
+    |--Posiciones en Texto1:--> 52 91 185 269 345
+    |--Posiciones en Texto2:--> 65 195 240 311
 Palabra: "cada"
-  |--Posiciones en Texto1:--> 141
-  |--Posiciones en Texto2:--> 143
+    |--Posiciones en Texto1:--> 141
+    |--Posiciones en Texto2:--> 143
 Palabra: "con"
-  |--Posiciones en Texto1:--> 76 118 137 168
-  |--Posiciones en Texto2:--> 50 120 139 248 319
+    |--Posiciones en Texto1:--> 76 118 137 168
+    |--Posiciones en Texto2:--> 50 120 139 248 319
 Palabra: "consola"
-  |--Posiciones en Texto1:--> 76 118
-  |--Posiciones en Texto2:--> 50 120
+    |--Posiciones en Texto1:--> 76 118
+    |--Posiciones en Texto2:--> 50 120
 ...
 ```
 
