@@ -431,6 +431,23 @@ Máximo: XYZ
 <br>
   
 ```c#
+static void Agregar<T>(Nodo<T> arbol, params T[] v) where T:IComparable<T> {
+    foreach (T elem in v) {
+        arbol.Insertar(elem);
+    }
+}
+
+static void Imprimir<T> (Nodo<T> v) where T:IComparable<T> {
+    foreach (T elem in v.InOrder)
+    {
+        Console.Write(elem + " ");
+    }
+    Console.WriteLine();
+    Console.WriteLine($"Altura: {v.Altura}");
+    Console.WriteLine($"Cantidad: {v.CantNodos}");
+    Console.WriteLine($"Mínimo: {v.ValorMinimo}");
+    Console.WriteLine($"Máximo: {v.ValorMaximo}");
+}
 ```
   
 </details>
