@@ -218,6 +218,8 @@ class ListaEnlazada<T> {
 }
 ```
 
+</details>	
+
 <br><hr id="Ejercicio_5"><br>
 
 ```5)```  Tomar como base el ejercicio 7 de la práctica 4 para transformar la clase Nodo de dicho ejercicio en una clase genérica Nodo<T> de un árbol binario de búsqueda de valores de tipo T. Claramente T tiene que ser de un tipo que pueda ser ordenado (elementos comparables).
